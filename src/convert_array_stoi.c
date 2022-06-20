@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/20 19:43:23 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/20 20:48:05 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@ static int	stoi_neg(char *str);
 
 int	*convert_array_str_to_int(size_t array_size, char **src)
 {
-	int	*dst;
-	int	*dst_head;
+	int	*dest;
+	int	*dest_head;
 
-	dst = malloc_and_checknull(array_size * sizeof(int));
-	dst_head = dst;
+	dest = malloc_and_checknull(array_size * sizeof(int));
+	dest_head = dest;
 	while (array_size--)
 	{
-		*dst = stoi_or_exit(*src);
-		dst++;
+		*dest = stoi_or_exit(*src);
+		dest++;
 		src++;
 	}
-	return (dst_head);
+	return (dest_head);
 }
 
 static int	stoi_or_exit(char *str)
@@ -40,11 +40,10 @@ static int	stoi_or_exit(char *str)
 
 	res = 0;
 	sign = getsign_or_exit(*str);
-	str++;
 	if (sign == POSITIVE)
 		res = stoi_pos(str);
 	else
-		res = stoi_neg(str);
+		res = stoi_neg(str + 1);
 	return (res);
 }
 
