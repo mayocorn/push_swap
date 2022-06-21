@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 18:00:58 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/20 19:50:06 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 09:28:13 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 # define CONVERT_ARRAY_STOI_H
 # include <stdlib.h>
 # include <limits.h>
-# include "../include/utils.h"
-# include "../include/libft.h"
+# include "utils.h"
+# include "libft.h"
 # define POSITIVE 1
 # define NEGATIVE -1
-# define ERROR 1
 
 int	*convert_array_str_to_int(size_t array_size, char **src);
 #endif
