@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:51:15 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/20 20:08:26 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 08:54:43 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define UTILS_H
 # include <stdlib.h>
 # include <unistd.h>
+# define SUCCESS 0
+# define ERROR 1
 
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);

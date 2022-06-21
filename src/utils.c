@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:38:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/20 19:03:14 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 08:55:16 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void	free_and_setnull(void **ptr)
 
 void	ft_exit(int status)
 {
-	if (status == 0)
-		exit(0);
+	if (status == SUCCESS)
+		exit(SUCCESS);
 	write(2, "ERROR\n", 6);
-	exit(1);
+	exit(ERROR);
 }
