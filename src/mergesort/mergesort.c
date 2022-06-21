@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:23:31 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/20 20:53:28 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:18:37 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/mergesort.h"
+#include "../../include/mergesort.h"
 
 static void	merge_array(size_t a_size, size_t b_size, \
 						int *array_a, int *array_b);

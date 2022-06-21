@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:38:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 08:55:16 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:18:50 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/utils.h"
+#include "../../include/utils.h"
 
 int	ft_min(int a, int b)
 {

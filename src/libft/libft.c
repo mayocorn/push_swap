@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   array.c                                            :+:      :+:    :+:   */
+/*   libft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 20:27:58 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 09:07:04 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/06/20 18:08:43 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/06/21 15:17:30 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../include/array.h"
+#include "../../include/libft.h"
 
-int	*duplicate_int_array(size_t size, int *src)
+int	ft_isdigit(int c)
 {
-	int	*dest;
-
-	dest = malloc_and_checknull(size * sizeof(int));
-	ft_memmove(dest, src, size * sizeof(int));
-	return (dest);
+	return ('0' <= c && c <= '9');
 }
 
-void check_unique(size_t size, int *array)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	while(size > 1)
+	char		*dest_cp;
+	const char	*src_cp;
+
+	dest_cp = (char *)dest;
+	src_cp = (const char *)src;
+	if (dest == src)
+		return (dest);
+	while (n--)
 	{
-		if (*array == *(array + 1))
-			ft_exit(ERROR);
-		array++;
-		size--;
+		if (dest < src)
+			*(dest_cp++) = *(src_cp++);
+		else
+			*(dest_cp + n) = *(src_cp + n);
 	}
+	return (dest);
 }

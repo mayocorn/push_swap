@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 10:14:24 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:21:49 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"../include/convert_array_stoi.h"
+#include	"../../include/array.h"
 
 static int	stoi_or_exit(char *str);
 static int	getsign_or_exit(char c);
