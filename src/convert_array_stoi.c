@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/20 20:48:05 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/21 10:14:24 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static int	stoi_pos(char *str)
 	{
 		if (!ft_isdigit(*str))
 			ft_exit(ERROR);
-		if (res != 0 && INT_MAX / res < 10)
+		if (INT_MAX / 10 < res)
 			ft_exit(ERROR);
 		res *= 10;
 		if (INT_MAX - res < *str - '0')
@@ -85,7 +85,7 @@ static int	stoi_neg(char *str)
 	{
 		if (!ft_isdigit(*str))
 			ft_exit(ERROR);
-		if (res != 0 && INT_MIN / res < 10)
+		if (INT_MIN / 10 > res)
 			ft_exit(ERROR);
 		res *= 10;
 		if (INT_MIN - res > -(*str - '0'))
