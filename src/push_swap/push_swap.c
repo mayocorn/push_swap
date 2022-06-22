@@ -6,11 +6,13 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:45:42 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 12:15:21 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/22 19:10:29 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
+
+static void	create_initial_deque(size_t size, int *array, t_deque *element_list);
 
 t_deque	*push_swap(size_t size, int *array)
 {
@@ -19,7 +21,17 @@ t_deque	*push_swap(size_t size, int *array)
 
 	command_list = create_deque();
 	element_list = create_deque();
-	push_swap_start();
-	
+	create_initial_deque(size, array, element_list);
+	sort_a_start(element_list, command_list);
 	return (command_list);
 }
+
+static void	create_initial_deque(size_t size, int *array, t_deque *element_list)
+{
+	while(size--)
+	{
+		pushback(element_list, create_number_node(*array));
+		array++;
+	}
+}
+
