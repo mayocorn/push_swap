@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 08:35:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 09:12:50 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/22 15:04:30 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_node	*create_command_node(t_command command)
 	return (res);
 }
 
-t_node	*create_number_node(size_t number)
+t_node	*create_number_node(int number)
 {
 	t_node		*res;
 	t_content	content;
