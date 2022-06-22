@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   command.h                                          :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/21 12:31:11 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 08:15:34 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/06/21 20:46:59 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/06/22 18:49:44 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMMAND_H
-# define COMMAND_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include <stdlib.h>
+# include "utils.h"
+# include "deque.h"
 
-typedef enum e_command
-{
-	sa,
-	sb,
-	ss,
-	pa,
-	pb,
-	ra,
-	rb,
-	rr,
-	rra,
-	rrb,
-	rrr
-}	t_command;
-
+t_deque	*push_swap(size_t size, int *array);
+void	sort_a_start(t_deque *element_list, t_deque *command_list);
+void	divide_a_start(t_deque *element_list, t_deque *command_list, t_deques *deques);
 #endif
