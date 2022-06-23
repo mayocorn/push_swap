@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 08:35:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 15:04:30 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/23 07:21:56 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,19 @@ void	disjoint_node(t_deque *deque, t_node *ptr)
 	deque -> size--;
 	ptr -> prev = NULL;
 	ptr -> next = NULL;
+}
+
+void	delete_deque(t_deque *deque)
+{
+	t_node	*prev;
+	t_node	*node;
+
+	node = deque -> front;
+	while (node != NULL)
+	{
+		prev = node;
+		node = node -> next;
+		free(prev);
+	}
+	free(deque);
 }

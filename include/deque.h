@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:47:14 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 16:04:55 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/23 19:19:42 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ typedef struct s_deques
 {
 	int		large;
 	int		small;
-	t_deque	*large_q;
-	t_deque	*med_q;
-	t_deque	*small_q;
+	t_deque	*commands;
+	t_deque	*elements;
+	t_deque	*af;
+	t_deque	*ab;
+	t_deque	*bf;
+	t_deque	*bb;
 }	t_deques;
 
 typedef union u_content
@@ -54,6 +57,14 @@ t_node	*create_node(void);
 t_node	*create_command_node(t_command command);
 t_node	*create_number_node(int number);
 void	disjoint_node(t_deque *deque, t_node *ptr);
-t_deques	*create_deques(void);
-
+void	delete_deque(t_deque *deque);
+t_deques	*create_deques(t_deque *elements, t_deque *commands);
+void	popfront_and_pushfront(t_deques *deques, \
+								t_deque *after, t_command command);
+void	popfront_and_pushback(t_deques *deques, \
+								t_deque *after, t_command command);
+void	popback_and_pushfront(t_deques *deques, \
+								t_deque *after, t_command command);
+void	popback_and_pushback(t_deques *deques, \
+								t_deque *after, t_command command);
 #endif
