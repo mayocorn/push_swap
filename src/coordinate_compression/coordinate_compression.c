@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:20:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/23 18:29:45 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/23 20:18:27 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	*coordinate_compression(size_t size, int **original, int **sorted)
 	i = 0;
 	while (i < size)
 	{
-		res[i] = get_index(size, *sorted, *original[i]);
+		res[i] = get_index(size, *sorted, (*original)[i]);
 		i++;
 	}
-	free_and_setnull(*sorted);
-	free_and_setnull(*original);
+	free_and_setnull((void**)sorted);
+	free_and_setnull((void**)original);
 	return (res);
 }
 
