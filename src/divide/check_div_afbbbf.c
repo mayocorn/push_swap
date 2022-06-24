@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_div_afbbbf.c                                 :+:      :+:    :+:   */
+/*   check_div_abbbbf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 15:03:54 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 16:13:05 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/24 17:58:37 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/divide.h"
 
-static size_t	cnt_div_afbbbf(t_div_info *div_info, int large, int small);
+static size_t	cnt_rr(t_div_info *div_info, int large, int small);
 static void		set_div_info(t_div_info *div_info, int large, int small);
 
 void	check_div_afbbbf(t_div_info *div_info, size_t *max_cnt, int min_element)
@@ -25,7 +25,7 @@ void	check_div_afbbbf(t_div_info *div_info, size_t *max_cnt, int min_element)
 	size = div_info -> elements -> size;
 	large = size - (size + 2) / 3 + min_element;
 	small = (size + 1) / 3 - 1 + min_element;
-	cnt = cnt_div_afbbbf(div_info, large, small);
+	cnt = cnt_rr(div_info, large, small);
 	if (cnt >= *max_cnt)
 	{
 		*max_cnt = cnt;
@@ -33,7 +33,7 @@ void	check_div_afbbbf(t_div_info *div_info, size_t *max_cnt, int min_element)
 	}
 }
 
-static size_t	cnt_div_afbbbf(t_div_info *div_info, int large, int small)
+static size_t	cnt_rr(t_div_info *div_info, int large, int small)
 {
 	size_t	cnt;
 	size_t	hold_cnt;
@@ -73,5 +73,5 @@ static void	set_div_info(t_div_info *div_info, int large, int small)
 	div_info -> s_push = move_hold_all;
 	div_info -> l_next = sort_a_maxvalue;
 	// div_info -> m_next = sort_b_back;
-	// div_info -> s_next = sort_b_front;
+	div_info -> s_next = sort_b_front;
 }
