@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:52:27 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/23 20:31:38 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:29:32 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ t_node	*popback(t_deque *deque)
 		deque -> front = NULL;
 	res -> prev = NULL;
 	deque -> size--;
-	return ((t_node *) res);
+	return (res);
 }
 
 t_node	*popfront(t_deque *deque)
@@ -92,5 +92,5 @@ t_node	*popfront(t_deque *deque)
 		deque -> back = NULL;
 	res -> next = NULL;
 	deque -> size--;
-	return ((t_node *)res);
+	return (res);
 }

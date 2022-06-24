@@ -6,66 +6,67 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:02:24 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/23 19:18:05 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/24 09:39:43 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/deque.h"
 
-t_deques	*create_deques(t_deque *elements, t_deque *commands)
-{
-	t_deques	*res;
-
-	res = malloc_and_checknull(sizeof(t_deques));
-	res -> elements = elements;
-	res -> commands = commands;
-	res -> af = create_deque();
-	res -> ab = create_deque();
-	res -> bf = create_deque();
-	res -> bb = create_deque();
-	return (res);
-}
-
-void	popfront_and_pushfront(t_deques *deques, \
+void	popfront_and_pushfront(t_div_info *div_info, \
 								t_deque *after, t_command command)
 {
 	t_node	*node;
 
-	node = popfront(deques -> elements);
+	node = popfront(div_info -> elements);
 	pushfront(after, node);
 	node = create_command_node(command);
-	pushback(deques -> commands, node);
+	pushback(div_info -> commands, node);
 }
 
-void	popfront_and_pushback(t_deques *deques, \
+void	popfront_and_pushback(t_div_info *div_info, \
 								t_deque *after, t_command command)
 {
 	t_node	*node;
 
-	node = popfront(deques -> elements);
+	node = popfront(div_info -> elements);
 	pushback(after, node);
 	node = create_command_node(command);
-	pushback(deques -> commands, node);
+	pushback(div_info -> commands, node);
 }
 
-void	popback_and_pushfront(t_deques *deques, \
+void	popback_and_pushfront(t_div_info *div_info, \
 								t_deque *after, t_command command)
 {
 	t_node	*node;
 
-	node = popback(deques -> elements);
+	node = popback(div_info -> elements);
 	pushfront(after, node);
 	node = create_command_node(command);
-	pushback(deques -> commands, node);
+	pushback(div_info -> commands, node);
 }
 
-void	popback_and_pushback(t_deques *deques, \
+void	popback_and_pushback(t_div_info *div_info, \
 								t_deque *after, t_command command)
 {
 	t_node	*node;
 
-	node = popback(deques -> elements);
+	node = popback(div_info -> elements);
 	pushback(after, node);
 	node = create_command_node(command);
-	pushback(deques -> commands, node);
+	pushback(div_info -> commands, node);
+}
+
+int	get_minelement(t_deque *deque)
+{
+	t_node	*node;
+	int		min_element;
+
+	node = deque -> front;
+	min_element = INT_MAX;
+	while (node != NULL)
+	{
+		min_element = ft_min(min_element, node -> content.number);
+		node = node -> next;
+	}
+	return (min_element);
 }
