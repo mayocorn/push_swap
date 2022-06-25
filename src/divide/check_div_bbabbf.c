@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:39:36 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 11:44:49 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/25 15:23:11 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static void	set_div_info(t_div_info *div_info, int large, int small)
 	div_info -> large = large;
 	div_info -> small = small;
 	div_info -> hold = div_info -> l_q;
-	div_info -> hold_after = create_deque();
 	div_info -> l_command = pb;
 	div_info -> m_command = ra;
 	div_info -> s_command = pb;
