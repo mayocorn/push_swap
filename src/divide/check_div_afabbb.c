@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 17:18:59 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 15:22:50 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/25 17:00:08 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static void	set_div_info(t_div_info *div_info, int large, int small)
 	div_info -> l_push = move_hold_all;
 	div_info -> m_push = popfront_and_pushfront;
 	div_info -> s_push = move_hold_one;
-	// div_info -> l_next = sort_a_front;
-	// div_info -> m_next = sort_a_back;
-	// div_info -> s_next = sort_b_back;
+	div_info -> l_next = sort_a_front;
+	div_info -> m_next = sort_a_back;
+	div_info -> s_next = sort_b_back;
 }
