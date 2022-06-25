@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 09:15:19 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 12:59:16 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/24 00:55:37 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@
 # include "mergesort.h"
 # include "coordinate_compression.h"
 # include "push_swap.h"
+# include "console_out.h"
 #endif
