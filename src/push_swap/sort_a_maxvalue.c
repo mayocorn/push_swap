@@ -6,13 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 06:23:53 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 18:12:47 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/25 16:56:33 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/push_swap.h"
-
-static void	cnt_a_maxvalue(t_deque *elements, t_deque *commands, int min_element);
 
 void	sort_a_maxvalue(t_deque *elements, t_deque *commands)
 {
@@ -32,5 +30,5 @@ void	sort_a_maxvalue(t_deque *elements, t_deque *commands)
 	check_div_afbbbf(div_info, &max_cnt, min_element);
 	divide(div_info);
 	delete_back_ra(div_info);
-	//分岐
+	sort_next_division(div_info);
 }

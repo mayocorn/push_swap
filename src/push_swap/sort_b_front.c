@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 17:12:18 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 18:25:19 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/25 17:01:38 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	sort_b_front(t_deque *elements, t_deque *commands)
 	check_div_afabbb(div_info, &max_cnt, min_element);
 	check_div_afbbab(div_info, &max_cnt, min_element);
 	divide(div_info);
-	//分岐
+	sort_next_division(div_info);
 }
