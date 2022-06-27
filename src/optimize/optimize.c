@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 18:16:17 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 18:28:32 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/28 01:11:59 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	optimize(t_deque *commands)
 {
-	optimize_delete(commands);
-	// optimize_swap();
-	// optimize_rr();
-	// optimize_ss();
+	optimize_each_command(commands);
+	optimize_sametime_command(commands);
 }
