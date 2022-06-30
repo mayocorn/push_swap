@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:45:42 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 14:25:23 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/30 01:18:21 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ t_deque	*push_swap(size_t size, int **array)
 	elements = create_deque();
 	create_initial_deque(size, *array, elements);
 	free_and_setnull((void **)array);
-	sort_a_start(elements, commands);
+	//for debug
+	sort_a_front(elements, commands);
 	return (commands);
 }
 
