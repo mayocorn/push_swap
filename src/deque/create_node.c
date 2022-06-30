@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deque2.c                                           :+:      :+:    :+:   */
+/*   create_node.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 08:35:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/23 07:21:56 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/07/01 05:21:07 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/07/01 05:22:03 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,39 +42,4 @@ t_node	*create_number_node(int number)
 	content.number = number;
 	res -> content = content;
 	return (res);
-}
-
-void	disjoint_node(t_deque *deque, t_node *ptr)
-{
-	t_node	*prev;
-	t_node	*next;
-
-	prev = ptr -> prev;
-	next = ptr -> next;
-	if (prev != NULL)
-		prev -> next = next;
-	else
-		deque -> front = next;
-	if (next != NULL)
-		next -> prev = prev;
-	else
-		deque -> back = prev;
-	deque -> size--;
-	ptr -> prev = NULL;
-	ptr -> next = NULL;
-}
-
-void	delete_deque(t_deque *deque)
-{
-	t_node	*prev;
-	t_node	*node;
-
-	node = deque -> front;
-	while (node != NULL)
-	{
-		prev = node;
-		node = node -> next;
-		free(prev);
-	}
-	free(deque);
 }

@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 15:47:14 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 13:51:01 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 05:33:14 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,16 @@ typedef struct s_div_info
 }	t_div_info;
 
 t_deque	*create_deque(void);
-void	pushback(t_deque *deque, t_node *ptr);
-void	pushfront(t_deque *deque, t_node *ptr);
-t_node	*popback(t_deque *deque);
-t_node	*popfront(t_deque *deque);
 t_node	*create_node(void);
 t_node	*create_command_node(t_command command);
 t_node	*create_number_node(int number);
-void	disjoint_node(t_deque *deque, t_node *ptr);
 void	delete_deque(t_deque *deque);
+void	disjoint_node(t_deque *deque, t_node *ptr);
+int		get_minelement(t_deque *deque);
+t_node	*popback(t_deque *deque);
+t_node	*popfront(t_deque *deque);
+void	pushback(t_deque *deque, t_node *ptr);
+void	pushfront(t_deque *deque, t_node *ptr);
 void	popfront_and_pushfront(t_div_info *div_info, \
 								t_deque *after, t_command command);
 void	popfront_and_pushback(t_div_info *div_info, \
@@ -78,5 +79,4 @@ void	popback_and_pushfront(t_div_info *div_info, \
 								t_deque *after, t_command command);
 void	popback_and_pushback(t_div_info *div_info, \
 								t_deque *after, t_command command);
-int		get_minelement(t_deque *deque);
 #endif

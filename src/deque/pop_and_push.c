@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   deque3.c                                           :+:      :+:    :+:   */
+/*   pop_and_push.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 15:02:24 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 09:39:43 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/07/01 05:28:28 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/07/01 05:30:54 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,4 @@ void	popback_and_pushback(t_div_info *div_info, \
 	pushback(after, node);
 	node = create_command_node(command);
 	pushback(div_info -> commands, node);
-}
-
-int	get_minelement(t_deque *deque)
-{
-	t_node	*node;
-	int		min_element;
-
-	node = deque -> front;
-	min_element = INT_MAX;
-	while (node != NULL)
-	{
-		min_element = ft_min(min_element, node -> content.number);
-		node = node -> next;
-	}
-	return (min_element);
 }
