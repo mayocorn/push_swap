@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:09:40 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/28 00:36:43 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 03:47:13 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,17 @@ int	main(int argc, char **argv)
 	check_unique(array_size, array_sorted);
 	array_compressed = coordinate_compression \
 						(array_size, &array_original, &array_sorted);
-	// #include<stdio.h>
-	// for(int i=0; i<array_size; i++)printf("%d\n", array_compressed[i]);
 	commands = push_swap(array_size, &array_compressed);
 	optimize(commands);
 	print_commands(commands);
 	delete_deque(commands);
 }
+
+/*
+static void	destructor(void) __attribute__((destructor));
+
+static void	destructor(void)
+{
+	system("leaks -q push_swap");
+}
+*/
