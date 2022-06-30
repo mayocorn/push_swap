@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 00:06:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/28 00:44:40 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/06/30 20:21:50 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ void	optimize_sametime_command(t_deque *commands)
 	now = commands -> front;
 	while (now != NULL)
 	{
-		if (now -> content.command == ra || now -> content.command == rb)
+		if (now -> prev == NULL)
+			now = now -> next;
+		else if (now -> content.command == ra || now -> content.command == rb)
 			convert_rr(commands, &now);
 		else if (now -> content.command == rra || now -> content.command == rrb)
 			convert_rrr(commands, &now);
@@ -54,7 +56,7 @@ static void	convert_rr(t_deque *commands, t_node **node)
 			*node = next;
 			return ;
 		}
-		else if (command == ra && prev -> content.command != sa || \
+		else if (command == ra && prev -> content.command == sa || \
 					command == rb && prev -> content.command != sb)
 			break ;
 		prev = prev -> prev;
