@@ -1,32 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   malloc_and_checknull.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/16 17:38:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 15:18:50 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/07/01 04:50:53 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/07/01 04:54:11 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/utils.h"
-
-int	ft_min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	else
-		return (b);
-}
-
-int	ft_max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
 
 void	*malloc_and_checknull(size_t size)
 {
@@ -34,20 +18,6 @@ void	*malloc_and_checknull(size_t size)
 
 	res = malloc(size);
 	if (res == NULL)
-		ft_exit(1);
+		ft_exit(ERROR);
 	return (res);
-}
-
-void	free_and_setnull(void **ptr)
-{
-	free(*ptr);
-	*ptr = NULL;
-}
-
-void	ft_exit(int status)
-{
-	if (status == SUCCESS)
-		exit(SUCCESS);
-	write(2, "ERROR\n", 6);
-	exit(ERROR);
 }
