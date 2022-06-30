@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.c                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 18:08:43 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 15:17:30 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/07/01 05:43:47 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/07/01 05:44:09 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/libft.h"
-
-int	ft_isdigit(int c)
-{
-	return ('0' <= c && c <= '9');
-}
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
