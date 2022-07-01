@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 02:47:24 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:46:24 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ static int	getsign_or_exit(char c)
 {
 	int	res;
 
+	res = -1;
 	if (ft_isdigit(c))
 		res = POSITIVE;
 	else if (c == '-')
