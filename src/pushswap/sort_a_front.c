@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 06:37:16 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 06:11:31 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 04:29:23 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ static void	sort_a_front_half(t_deque *elements, t_deque *commands)
 		else
 			popfront_and_pushback(div_info, div_info -> s_q, ra);
 	}
+	free_and_setnull((void **)&elements);
 	sort_b_front(div_info -> l_q, div_info -> commands);
 	sort_a_back(div_info -> s_q, div_info -> commands);
 	free(div_info);

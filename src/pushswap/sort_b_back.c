@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 16:36:00 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:27:47 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 04:01:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,15 @@ void	sort_b_back(t_deque *elements, t_deque *commands)
 	if (elements -> size < 1)
 		return (delete_deque(elements));
 	div_info = create_div_info(elements, commands);
+	delete_deque(div_info -> m_q);
 	size = elements -> size;
 	min_element = get_minelement(elements);
 	div_info -> large = size - (size + 1) / 2 + min_element;
 	div_info -> hold = div_info -> l_q;
 	divide_b_back(div_info);
-	delete_deque(div_info -> m_q);
 	sort_a_front(div_info -> l_q, div_info -> commands);
 	sort_b_front(div_info -> s_q, div_info -> commands);
+	free(div_info);
 }
 
 static void	divide_b_back(t_div_info *div_info)

@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 15:00:01 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:24:03 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 04:00:55 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	sort_a_back(t_deque *elements, t_deque *commands)
 	divide_a_back(div_info);
 	sort_a_front(div_info -> l_q, div_info -> commands);
 	sort_b_front(div_info -> s_q, div_info -> commands);
+	free(div_info);
 }
 
 static void	divide_a_back(t_div_info *div_info)
