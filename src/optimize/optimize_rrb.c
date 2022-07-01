@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   optimize_rrb1.c                                    :+:      :+:    :+:   */
+/*   optimize_rrb.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 16:11:53 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/29 16:51:28 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:57:07 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	optimize_rrb(t_deque *commands, t_node **node)
 {
 	t_node	*prev;
 
-	prev = (*node) -> prev;
+	prev = (*node)->prev;
 	if (prev == NULL)
-		*node = (*node) -> next;
+		*node = (*node)->next;
 	else if (prev -> content.command == sb)
 		return (optimize_pbrbsbrrb(commands, node));
 	else
-		return (optimize_rb_rrb(commands, node));
+		return (optimize_rrb_sub(commands, node));
 }
 
 static void	optimize_pbrbsbrrb(t_deque *commands, t_node **node)
@@ -33,7 +33,7 @@ static void	optimize_pbrbsbrrb(t_deque *commands, t_node **node)
 	t_node	*rb_node;
 	t_node	*pb_node;
 
-	sb_node = (*node) -> prev;
+	sb_node = (*node)->prev;
 	rb_node = sb_node -> prev;
 	if (rb_node != NULL && rb_node -> content.command == rb)
 	{
@@ -42,10 +42,10 @@ static void	optimize_pbrbsbrrb(t_deque *commands, t_node **node)
 		{
 			disjoint_node(commands, pb_node);
 			disjoint_node(commands, rb_node);
-			(*node) -> content.command = pb;
+			(*node)->content.command = pb;
 			*node = sb_node;
 			return ;
 		}
 	}
-	*node = (*node) -> next;
+	*node = (*node)->next;
 }

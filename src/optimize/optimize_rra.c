@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   optimize_rra1.c                                    :+:      :+:    :+:   */
+/*   optimize_rra.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:29:23 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/30 01:10:57 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:52:52 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	optimize_rra(t_deque *commands, t_node **node)
 {
 	t_node	*prev;
 
-	prev = (*node) -> prev;
+	prev = (*node)->prev;
 	if (prev == NULL)
-		*node = (*node) -> next;
+		*node = (*node)->next;
 	else if (prev -> content.command == sa)
 		return (optimize_parasarra(commands, node));
 	else
-		return (optimize_ra_rra(commands, node));
+		return (optimize_rra_sub(commands, node));
 }
 
 static void	optimize_parasarra(t_deque *commands, t_node **node)
@@ -33,7 +33,7 @@ static void	optimize_parasarra(t_deque *commands, t_node **node)
 	t_node	*ra_node;
 	t_node	*pa_node;
 
-	sa_node = (*node) -> prev;
+	sa_node = (*node)->prev;
 	ra_node = sa_node -> prev;
 	if (ra_node != NULL && ra_node -> content.command == ra)
 	{
@@ -42,10 +42,10 @@ static void	optimize_parasarra(t_deque *commands, t_node **node)
 		{
 			disjoint_node(commands, pa_node);
 			disjoint_node(commands, ra_node);
-			(*node) -> content.command = pa;
+			(*node)->content.command = pa;
 			*node = sa_node;
 			return ;
 		}
 	}
-	*node = (*node) -> next;
+	*node = (*node)->next;
 }
