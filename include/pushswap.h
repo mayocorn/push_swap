@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:46:59 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:33:42 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:36:56 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,6 @@
 # include "utils.h"
 # include "deque.h"
 # include "divide.h"
-
-typedef struct s_hold_info{
-	t_deque		*hold;
-	t_deque		*hold_after;
-	t_deque		*elements;
-	t_deque		*elements_after;
-	t_deque		*commands;
-	t_command	command_hold;
-	t_command	command_elements;
-}	t_hold_info;
 
 t_deque	*push_swap(size_t size, int **array);
 void	sort_a_start(t_deque *elements, t_deque *commands);
