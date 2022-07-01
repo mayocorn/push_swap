@@ -17,6 +17,7 @@
 ##  🆗 使用してもよい関数
 read, write, malloc, free, exit<br>
 また、[norminette](https://github.com/42School/norminette/blob/d443df72accb7b66bd65e98d76207da1e6968e00/pdf/ja.norm.pdf)という42独自のコーディング規約に従う必要があります。
+norminetteの仕様でインデントがずれていたり変数のスコープが大きくなっていたりします。
 
 
 ##  ✅ ベンチマーク
