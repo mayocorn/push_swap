@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:52:28 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/28 19:51:31 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:48:45 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	optimize_rb(t_deque *commands, t_node **node)
 	t_node		*next;
 	t_command	command;
 
-	prev = (*node) -> prev;
+	prev = (*node)->prev;
 	if (prev != NULL && prev -> content.command == pa)
 		return (optimize_sbparb(commands, node));
 	while (prev != NULL)
@@ -40,7 +40,7 @@ void	optimize_rb(t_deque *commands, t_node **node)
 			break ;
 		prev = prev -> prev;
 	}
-	*node = (*node) -> next;
+	*node = (*node)->next;
 }
 
 static void	optimize_sbparb(t_deque *commands, t_node **node)
@@ -48,7 +48,7 @@ static void	optimize_sbparb(t_deque *commands, t_node **node)
 	t_node	*pa_node;
 	t_node	*sb_node;
 
-	pa_node = (*node) -> prev;
+	pa_node = (*node)->prev;
 	sb_node = pa_node -> prev;
 	if (sb_node != NULL && sb_node -> content.command == sb)
 	{
@@ -57,5 +57,5 @@ static void	optimize_sbparb(t_deque *commands, t_node **node)
 		*node = sb_node;
 	}
 	else
-		*node = (*node) -> next;
+		*node = (*node)->next;
 }
