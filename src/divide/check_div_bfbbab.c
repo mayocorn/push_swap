@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:55:53 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 15:23:31 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:48:39 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	check_div_bfbbab(t_div_info *div_info, size_t *max_cnt, int min_element)
 
 	size = div_info -> elements -> size;
 	large = size - (size + 2) / 3 + min_element;
-	small = (size + 1)/ 3 - 1 + min_element;
+	small = (size + 1) / 3 - 1 + min_element;
 	cnt = cnt_rr(div_info, large, small);
 	if (cnt >= *max_cnt)
 	{
@@ -51,7 +51,8 @@ static size_t	cnt_rr(t_div_info *div_info, int large, int small)
 			hold_cnt--;
 			cnt++;
 		}
-		if (node -> content.number > small && node -> content.number < large)
+		if (node -> content.number > small && \
+				node -> content.number < large)
 			hold_cnt++;
 		node = node -> next;
 	}
