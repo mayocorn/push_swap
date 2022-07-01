@@ -6,36 +6,52 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 20:15:48 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/28 20:18:15 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 16:39:34 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/optimize.h"
 
-void	optimize_parrbpb(t_deque *commands, t_node **node)
+static void	optimize_parrbpb(t_deque *commands, t_node **node);
+static void	optimize_rrbpasbpb(t_deque *commands, t_node **node);
+
+void	optimize_pb_sub(t_deque *commands, t_node **node)
+{
+	t_node	*prev;
+
+	prev = (*node)->prev;
+	if (prev -> content.command == rrb)
+		return (optimize_parrbpb(commands, node));
+	else if (prev -> content.command == sb)
+		return (optimize_rrbpasbpb(commands, node));
+	else
+		*node = (*node)->next;
+}
+
+static void	optimize_parrbpb(t_deque *commands, t_node **node)
 {
 	t_node	*rrb_node;
 	t_node	*pa_node;
 
-	rrb_node = (*node) -> prev;
+	rrb_node = (*node)->prev;
 	pa_node = rrb_node -> prev;
 	if (pa_node != NULL && pa_node -> content.command == pa)
 	{
 		disjoint_node(commands, pa_node);
-		(*node) -> content.command = sb;
+		(*node)->content.command = sb;
 		*node = rrb_node;
 	}
 	else
-		*node = (*node) -> next;
+		*node = (*node)->next;
 }
 
-void optimize_rrbpasbpb(t_deque *commands, t_node **node)
+static void	optimize_rrbpasbpb(t_deque *commands, t_node **node)
 {
-	t_node *sb_node;
-	t_node *pa_node;
-	t_node *rrb_node;
+	t_node	*sb_node;
+	t_node	*pa_node;
+	t_node	*rrb_node;
 
-	sb_node = (*node) -> prev;
+	sb_node = (*node)->prev;
 	pa_node = sb_node -> prev;
 	if (pa_node != NULL && pa_node -> content.command == pa)
 	{
@@ -44,10 +60,10 @@ void optimize_rrbpasbpb(t_deque *commands, t_node **node)
 		{
 			disjoint_node(commands, rrb_node);
 			disjoint_node(commands, pa_node);
-			(*node) -> content.command = rrb;
+			(*node)->content.command = rrb;
 			*node = sb_node;
 			return ;
 		}
 	}
-	*node = (*node) -> next;
+	*node = (*node)->next;
 }
