@@ -6,89 +6,95 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/02 02:02:58 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/02 02:56:31 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = push_swap
 
-SRCS    = src/main.c \
-          src/array/check_unique.c \
-          src/array/convert_array_stoi.c \
-          src/array/duplicate_int_array.c \
-          src/console_out/print_commands.c \
-          src/coordinate_compression/coordinate_compression.c \
-          src/deque/create_deque.c \
-          src/deque/create_node.c \
-          src/deque/delete_deque.c \
-          src/deque/disjoint_node.c \
-          src/deque/get_minelement.c \
-          src/deque/pop_and_push.c \
-          src/deque/popback.c \
-          src/deque/popfront.c \
-          src/deque/pushback.c \
-          src/deque/pushfront.c \
-          src/divide/check_div_abbbbf.c \
-          src/divide/check_div_abbfbb.c \
-          src/divide/check_div_afabbb.c \
-          src/divide/check_div_afbbab.c \
-          src/divide/check_div_afbbbf.c \
-          src/divide/check_div_afbfbb.c \
-          src/divide/check_div_bbabbf.c \
-          src/divide/check_div_bbbfab.c \
-          src/divide/check_div_bfabbb.c \
-          src/divide/check_div_bfbbab.c \
-          src/divide/create_div_info.c \
-          src/divide/divide.c \
-          src/libft/ft_isdigit.c \
-          src/libft/ft_memmove.c \
-          src/mergesort/mergesort.c \
-          src/optimize/optimize.c \
-          src/optimize/optimize_each_command.c \
-          src/optimize/optimize_pa.c \
-          src/optimize/optimize_pa_sub.c \
-          src/optimize/optimize_pb.c \
-          src/optimize/optimize_pb_sub.c \
-          src/optimize/optimize_ra.c \
-          src/optimize/optimize_rb.c \
-          src/optimize/optimize_rra.c \
-          src/optimize/optimize_rra_sub.c \
-          src/optimize/optimize_rrb.c \
-          src/optimize/optimize_rrb_sub.c \
-          src/optimize/optimize_sametime_command.c \
-          src/pushswap/delete_back.c \
-          src/pushswap/move_hold.c \
-          src/pushswap/pushswap.c \
-          src/pushswap/sort_a_back.c \
-          src/pushswap/sort_a_front.c \
-          src/pushswap/sort_a_maxvalue.c \
-          src/pushswap/sort_a_start.c \
-          src/pushswap/sort_b_back.c \
-          src/pushswap/sort_b_front.c \
-          src/pushswap/sort_b_minvalue.c \
-          src/pushswap/sort_next_division.c \
-          src/utils/free_and_setnull.c \
-          src/utils/ft_exit.c \
-          src/utils/malloc_and_checknull.c
+SRCDIR  = ./src/
+SRCS    = main.c \
+          array/check_unique.c \
+          array/duplicate_int_array.c \
+          array/convert_array_stoi.c \
+          console_out/print_commands.c \
+          coordinate_compression/coordinate_compression.c \
+          deque/create_deque.c \
+          deque/create_node.c \
+          deque/delete_deque.c \
+          deque/disjoint_node.c \
+          deque/get_minelement.c \
+          deque/pop_and_push.c \
+          deque/popback.c \
+          deque/popfront.c \
+          deque/pushback.c \
+          deque/pushfront.c \
+          divide/check_div_abbbbf.c \
+          divide/check_div_abbfbb.c \
+          divide/check_div_afabbb.c \
+          divide/check_div_afbbab.c \
+          divide/check_div_afbbbf.c \
+          divide/check_div_afbfbb.c \
+          divide/check_div_bbabbf.c \
+          divide/check_div_bbbfab.c \
+          divide/check_div_bfabbb.c \
+          divide/check_div_bfbbab.c \
+          divide/create_div_info.c \
+          divide/divide.c \
+          libft/ft_isdigit.c \
+          libft/ft_memmove.c \
+          mergesort/mergesort.c \
+          optimize/optimize.c \
+          optimize/optimize_each_command.c \
+          optimize/optimize_pa.c \
+          optimize/optimize_pa_sub.c \
+          optimize/optimize_pb.c \
+          optimize/optimize_pb_sub.c \
+          optimize/optimize_ra.c \
+          optimize/optimize_rb.c \
+          optimize/optimize_rra.c \
+          optimize/optimize_rra_sub.c \
+          optimize/optimize_rrb.c \
+          optimize/optimize_rrb_sub.c \
+          optimize/optimize_sametime_command.c \
+          pushswap/delete_back.c \
+          pushswap/move_hold.c \
+          pushswap/pushswap.c \
+          pushswap/sort_a_back.c \
+          pushswap/sort_a_front.c \
+          pushswap/sort_a_maxvalue.c \
+          pushswap/sort_a_start.c \
+          pushswap/sort_b_back.c \
+          pushswap/sort_b_front.c \
+          pushswap/sort_b_minvalue.c \
+          pushswap/sort_next_division.c \
+          utils/free_and_setnull.c \
+          utils/ft_exit.c \
+          utils/ft_min.c \
+          utils/malloc_and_checknull.c
 
 OBJDIR  = ./obj/
-OBJS    = $(SRCS:%.c=$(OBJDIR)/%.o)
+OBJS    = $(addprefix $(OBJDIR), $(SRCS:%.c=%.o))
 
 DEPS    = $(OBJS:%.o=%.d)
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
 
-$(OBJDIR):
-	mkdir obj
+# ECHO:
+# 	echo $(OBJS)
 
-$(OBJDIR)%.o: %.c
+$(OBJDIR)%.o: $(SRCDIR)%.c
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 
 $(NAME): $(OBJDIR) $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-# -include $(DEPS)
+$(OBJDIR):
+	mkdir obj
+
+-include $(DEPS)
 
 .PHONY: all
 all: $(NAME)
