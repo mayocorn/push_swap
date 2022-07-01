@@ -6,14 +6,14 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 07:23:58 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 12:13:07 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 05:11:42 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DIVIDE_H
 # define DIVIDE_H
 # include "deque.h"
-# include "push_swap.h"
+# include "pushswap.h"
 
 t_div_info	*create_div_info(t_deque *elements, t_deque *commands);
 void		divide(t_div_info *div_info);
