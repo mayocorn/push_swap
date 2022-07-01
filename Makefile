@@ -6,7 +6,7 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/02 03:20:15 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/02 03:41:18 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS    = main.c \
           divide/divide.c \
           libft/ft_isdigit.c \
           libft/ft_memmove.c \
-          mergesort/mergesort.c \
+          mergesort/ft_mergesort.c \
           optimize/optimize.c \
           optimize/optimize_each_command.c \
           optimize/optimize_pa.c \

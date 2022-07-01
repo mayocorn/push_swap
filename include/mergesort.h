@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 16:02:25 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 09:28:37 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:40:56 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@
 # include "utils.h"
 # include "libft.h"
 
-void	mergesort(size_t array_size, int *array);
+void	ft_mergesort(size_t array_size, int *array);
 #endif

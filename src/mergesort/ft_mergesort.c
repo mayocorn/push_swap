@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:23:31 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 05:00:14 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:40:22 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	merge_array(size_t a_size, size_t b_size, \
 						int *array_a, int *array_b);
 
-void	mergesort(size_t array_size, int *array)
+void	ft_mergesort(size_t array_size, int *array)
 {
 	int		*array_a;
 	int		*array_b;
@@ -28,8 +28,8 @@ void	mergesort(size_t array_size, int *array)
 	b_size = array_size - a_size;
 	array_a = array;
 	array_b = array + a_size;
-	mergesort(a_size, array_a);
-	mergesort(b_size, array_b);
+	ft_mergesort(a_size, array_a);
+	ft_mergesort(b_size, array_b);
 	merge_array(a_size, b_size, array_a, array_b);
 }
 
