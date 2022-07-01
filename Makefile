@@ -6,7 +6,7 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/02 00:35:48 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/02 02:02:58 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,38 +72,36 @@ SRCS    = src/main.c \
           src/utils/malloc_and_checknull.c
 
 OBJDIR  = ./obj/
-OBJS    = $(addprefix $(OBJDIR), $(notdir $(SRCS:%.c=%.o)))
+OBJS    = $(SRCS:%.c=$(OBJDIR)/%.o)
 
 DEPS    = $(OBJS:%.o=%.d)
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
 
-$(OBJDIR)%.o: $(SRCDIR)%.c
-	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
-
-$(NAME): $(OBJDIR) $(OBJS)
-	$(MAKE) -C $(LIBFT)
-	cp $(LIBFT)/libft.a $@
-	ar -rcs $@ $(OBJS) 
-
 $(OBJDIR):
 	mkdir obj
 
--include $(DEPS)
+$(OBJDIR)%.o: %.c
+	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 
+$(NAME): $(OBJDIR) $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
+
+# -include $(DEPS)
+
+.PHONY: all
 all: $(NAME)
 
-bonus: all
+# bonus: all
 
+.PHONY: clean
 clean: 
-	$(MAKE) clean -C $(LIBFT)
 	rm -rf $(OBJDIR)
 
+.PHONY: fclean
 fclean: clean
-	$(MAKE) fclean -C $(LIBFT)
 	rm -f $(NAME)
 
+.PHONY: re
 re: fclean all
-
-.PHONY: all bonus clean fclean re
