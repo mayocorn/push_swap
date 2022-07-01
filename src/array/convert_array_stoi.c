@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/21 15:21:49 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 02:47:24 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,15 @@ static int	stoi_or_exit(char *str)
 
 static int	getsign_or_exit(char c)
 {
+	int	res;
+
 	if (ft_isdigit(c))
-		return (POSITIVE);
-	if (c == '-')
-		return (NEGATIVE);
-	ft_exit(ERROR);
+		res = POSITIVE;
+	else if (c == '-')
+		res = NEGATIVE;
+	else
+		ft_exit(ERROR);
+	return (res);
 }
 
 static int	stoi_pos(char *str)

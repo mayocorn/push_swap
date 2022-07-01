@@ -6,13 +6,13 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:26:02 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 16:42:52 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 02:59:18 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/optimize.h"
 
-static void	optimize_sbpapa(t_deque *commands, t_node **node);
+static void	optimize_sbpapa(t_node **node);
 static void	optimize_pbpa(t_deque *commands, t_node **node);
 static void	optimize_pbrapa(t_deque *commands, t_node **node);
 static void	optimize_sbrbpa(t_deque *commands, t_node **node);
@@ -25,7 +25,7 @@ void	optimize_pa(t_deque *commands, t_node **node)
 	if (prev == NULL)
 		*node = (*node)->next;
 	else if (prev -> content.command == pa)
-		return (optimize_sbpapa(commands, node));
+		return (optimize_sbpapa(node));
 	else if (prev -> content.command == pb)
 		return (optimize_pbpa(commands, node));
 	else if (prev -> content.command == ra)
@@ -36,7 +36,7 @@ void	optimize_pa(t_deque *commands, t_node **node)
 		return (optimize_pa_sub(commands, node));
 }
 
-static void	optimize_sbpapa(t_deque *commands, t_node **node)
+static void	optimize_sbpapa(t_node **node)
 {
 	t_node	*pa_node;
 	t_node	*sb_node;

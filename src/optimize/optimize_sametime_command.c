@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 00:06:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 16:16:10 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:16:21 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ static void	convert_rr(t_deque *commands, t_node **node)
 	command = (*node)->content.command;
 	while (prev != NULL)
 	{
-		if (command == ra && prev -> content.command == rb || \
-			command == rb && prev -> content.command == ra)
+		if ((command == ra && prev -> content.command == rb) || \
+			(command == rb && prev -> content.command == ra))
 		{
 			next = prev -> next;
 			if (next == *node)
@@ -57,8 +57,8 @@ static void	convert_rr(t_deque *commands, t_node **node)
 			*node = next;
 			return ;
 		}
-		else if (command == ra && prev -> content.command == sa || \
-					command == rb && prev -> content.command != sb)
+		else if ((command == ra && prev -> content.command != sa) || \
+					(command == rb && prev -> content.command != sb))
 			break ;
 		prev = prev -> prev;
 	}
@@ -75,8 +75,8 @@ static void	convert_rrr(t_deque *commands, t_node **node)
 	command = (*node)->content.command;
 	while (prev != NULL)
 	{
-		if (command == rra && prev -> content.command == rrb || \
-			command == rrb && prev -> content.command == rra)
+		if ((command == rra && prev -> content.command == rrb) || \
+			(command == rrb && prev -> content.command == rra))
 		{
 			next = prev -> next;
 			if (next == *node)
@@ -86,8 +86,8 @@ static void	convert_rrr(t_deque *commands, t_node **node)
 			*node = next;
 			return ;
 		}
-		else if (command == rra && prev -> content.command != sa || \
-					command == rrb && prev -> content.command != sb)
+		else if ((command == rra && prev -> content.command != sa) || \
+					(command == rrb && prev -> content.command != sb))
 			break ;
 		prev = prev -> prev;
 	}
@@ -101,8 +101,8 @@ static void	convert_ss(t_deque *commands, t_node **node)
 
 	prev = (*node)->prev;
 	command = (*node)->content.command;
-	if (command == sa && prev -> content.command == sb || \
-		command == sb && prev -> content.command == sa)
+	if ((command == sa && prev -> content.command == sb) || \
+		(command == sb && prev -> content.command == sa))
 	{
 		disjoint_node(commands, prev);
 		(*node)->content.command = ss;

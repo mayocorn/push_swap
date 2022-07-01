@@ -16,7 +16,7 @@
 
 ##  🆗 使用してもよい関数
 read, write, malloc, free, exit<br>
-また、[norminette](https://github.com/42School/norminette/blob/d443df72accb7b66bd65e98d76207da1e6968e00/pdf/ja.norm.pdf)という42独自のコーディング規約に従う必要があります。
+また、[norminette](https://github.com/42School/norminette/blob/d443df72accb7b66bd65e98d76207da1e6968e00/pdf/ja.norm.pdf)という42独自のコーディング規約に従う必要があります。<br>
 norminetteの仕様でインデントがずれていたり変数のスコープが大きくなっていたりします。
 
 
@@ -28,8 +28,19 @@ norminetteの仕様でインデントがずれていたり変数のスコープ�
 ##  🔗 説明スライド
 [push_swap](https://docs.google.com/presentation/d/13NAZS1wEtuRNTje_rvgyEfMTKCK4ryFImV-RLo8Z1C8/edit?usp=sharing)
 
-## ⭐ RUN
+## ⭐ USAGE
+clone
 ```bash
-$ make
-$
+git clone https://github.com/mayocorn/push_swap.git
+```
+
+build
+```bash
+cd push_swap
+make
+```
+
+run
+```
+./push_swap 5 4 1 3 2
 ```

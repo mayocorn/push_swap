@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:45:42 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 05:47:35 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 03:11:21 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	create_initial_deque(size_t size, int *array, t_deque *elements);
 
-t_deque	*push_swap(size_t size, int **array)
+t_deque	*pushswap(size_t size, int **array)
 {
 	t_deque	*commands;
 	t_deque	*elements;

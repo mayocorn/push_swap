@@ -6,7 +6,7 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/02 02:56:31 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/02 03:20:15 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,9 +80,6 @@ DEPS    = $(OBJS:%.o=%.d)
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
-
-# ECHO:
-# 	echo $(OBJS)
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	mkdir -p $(dir $@)

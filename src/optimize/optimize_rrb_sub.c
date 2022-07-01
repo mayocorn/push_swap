@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 16:12:16 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 16:58:19 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 02:52:15 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	optimize_rrb_sub(t_deque *commands, t_node **node)
 	*node = (*node)->next;
 }
 
-static void	optimize_rb_rrb_sub(t_deque *commands, t_node **node, \
+static void	optimize_rb_rrb(t_deque *commands, t_node **node, \
 									t_node *rb_node, t_node *pab_node)
 {
 	if (pab_node == NULL)

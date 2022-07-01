@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:46:59 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:36:56 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 02:06:05 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "deque.h"
 # include "divide.h"
 
-t_deque	*push_swap(size_t size, int **array);
+t_deque	*pushswap(size_t size, int **array);
 void	sort_a_start(t_deque *elements, t_deque *commands);
 void	sort_a_front(t_deque *elements, t_deque *commands);
 void	sort_a_back(t_deque *elements, t_deque *commands);
