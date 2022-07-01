@@ -6,25 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 08:35:34 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 15:22:24 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:49:33 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/divide.h"
-
-t_div_info	*create_div_info(t_deque *elements, t_deque *commands)
-{
-	t_div_info	*res;
-
-	res = malloc_and_checknull(sizeof(t_div_info));
-	res -> elements = elements;
-	res -> commands = commands;
-	res -> l_q = create_deque();
-	res -> m_q = create_deque();
-	res -> s_q = create_deque();
-	res -> hold_after = create_deque();
-	return (res);
-}
 
 void	divide(t_div_info *div_info)
 {
