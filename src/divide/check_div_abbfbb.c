@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:35:06 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/25 17:00:22 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:45:01 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ static size_t	cnt_rr(t_div_info *div_info, int large, int small)
 		}
 		if (node -> content.number <= small)
 			hold_cnt++;
-		if (node -> content.number > small && node -> content.number < large)
+		if (node -> content.number > small && \
+				node -> content.number < large)
 			hold_cnt = 0;
 		node = node -> next;
 	}
