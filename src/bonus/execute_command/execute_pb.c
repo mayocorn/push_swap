@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   execute_pb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/20 18:10:13 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 15:36:35 by mayocorn         ###   ########.fr       */
+/*   Created: 2022/07/04 05:38:10 by mayocorn          #+#    #+#             */
+/*   Updated: 2022/07/04 05:49:40 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
+#include "../../../include/bonus.h"
 
-int		ft_isdigit(int c);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-int		ft_strcmp(const char *s1, const char *s2);
-#endif
+void	execute_pb(t_deque *stack_a, t_deque *stack_b)
+{
+	if (stack_a -> front != NULL)
+		pushfront(stack_b, popfront(stack_a));
+}
