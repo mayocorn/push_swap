@@ -6,11 +6,12 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/02 03:41:18 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/04 07:06:44 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME    = push_swap
+B_NAME  = checker
 
 SRCDIR  = ./src/
 SRCS    = main.c \
@@ -73,10 +74,54 @@ SRCS    = main.c \
           utils/ft_min.c \
           utils/malloc_and_checknull.c
 
+B_SRCS  = bonus/main.c \
+          array/convert_array_stoi.c \
+          array/duplicate_int_array.c \
+          array/check_unique.c \
+          deque/create_deque.c \
+          deque/create_node.c \
+          deque/delete_deque.c \
+          deque/disjoint_node.c \
+          deque/get_minelement.c \
+          deque/pop_and_push.c \
+          deque/popback.c \
+          deque/popfront.c \
+          deque/pushback.c \
+          deque/pushfront.c \
+          libft/ft_isdigit.c \
+          libft/ft_memmove.c \
+          libft/ft_strcmp.c \
+          mergesort/ft_mergesort.c \
+          utils/free_and_setnull.c \
+          utils/ft_exit.c \
+          utils/malloc_and_checknull.c \
+          bonus/check_array/check_array.c \
+          bonus/check_commands/check_commands.c \
+          bonus/check_commands/check_sorted.c \
+          bonus/check_commands/convert_array_to_deque.c \
+          bonus/check_commands/pushswap_by_commands.c \
+          bonus/check_commands/read_commands.c \
+          bonus/execute_command/execute_command.c \
+          bonus/execute_command/execute_pa.c \
+          bonus/execute_command/execute_pb.c \
+          bonus/execute_command/execute_ra.c \
+          bonus/execute_command/execute_rb.c \
+          bonus/execute_command/execute_rra.c \
+          bonus/execute_command/execute_rrb.c \
+          bonus/execute_command/execute_rr.c \
+          bonus/execute_command/execute_rrr.c \
+          bonus/execute_command/execute_sa.c \
+          bonus/execute_command/execute_sb.c \
+          bonus/execute_command/execute_ss.c \
+          bonus/get_next_line/get_next_line.c \
+          bonus/get_next_line/get_next_line_utils.c
+
 OBJDIR  = ./obj/
 OBJS    = $(addprefix $(OBJDIR), $(SRCS:%.c=%.o))
+B_OBJS  = $(addprefix $(OBJDIR), $(B_SRCS:%.c=%.o))
 
 DEPS    = $(OBJS:%.o=%.d)
+B_DEPS  = $(B_OBJS:%.o=%.d)
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
@@ -91,12 +136,14 @@ $(NAME): $(OBJDIR) $(OBJS)
 $(OBJDIR):
 	mkdir obj
 
--include $(DEPS)
+-include $(DEPS) $(B_DEPS)
 
 .PHONY: all
 all: $(NAME)
 
-# bonus: all
+.PHONY: bonus
+bonus: $(OBJDIR) $(B_OBJS)
+	$(CC) $(CFLAGS) -o $(B_NAME) $(B_OBJS)
 
 .PHONY: clean
 clean: 
