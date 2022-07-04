@@ -6,7 +6,7 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/04 07:06:44 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/04 17:09:19 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,8 +81,6 @@ B_SRCS  = bonus/main.c \
           deque/create_deque.c \
           deque/create_node.c \
           deque/delete_deque.c \
-          deque/disjoint_node.c \
-          deque/get_minelement.c \
           deque/pop_and_push.c \
           deque/popback.c \
           deque/popfront.c \
@@ -127,14 +125,14 @@ CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+	 mkdir -p $(dir $@)
+	 $(CC) $(CFLAGS) -MMD -MP -c $< -o $@
 
-$(NAME): $(OBJDIR) $(OBJS)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-$(OBJDIR):
-	mkdir obj
+$(B_NAME): $(B_OBJS)
+	$(CC) $(CFLAGS) -o $@ $(B_OBJS)
 
 -include $(DEPS) $(B_DEPS)
 
@@ -142,8 +140,7 @@ $(OBJDIR):
 all: $(NAME)
 
 .PHONY: bonus
-bonus: $(OBJDIR) $(B_OBJS)
-	$(CC) $(CFLAGS) -o $(B_NAME) $(B_OBJS)
+bonus: $(B_NAME)
 
 .PHONY: clean
 clean: 
@@ -151,7 +148,7 @@ clean:
 
 .PHONY: fclean
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) $(B_NAME)
 
 .PHONY: re
 re: fclean all
