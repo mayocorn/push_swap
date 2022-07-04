@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 01:30:40 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:09:16 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/04 19:35:01 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,44 @@
 
 void	delete_back_ra(t_div_info *div_info)
 {
-	t_deque		*commands;
+	t_node		*now;
+	t_node		*prev;
 	t_command	command;
 
-	commands = div_info -> commands;
-	while (commands -> size)
+	now = div_info -> commands -> back;
+	while (now != NULL)
 	{
-		command = commands -> back -> content.command;
+		command = now -> content.command;
+		prev = now -> prev;
 		if (command == ra)
 		{
-			free(popback(commands));
+			disjoint_node(div_info -> commands, now);
 			pushfront(div_info -> l_q, popback(div_info -> l_q));
 		}
-		else
+		else if (command == pb)
 			break ;
+		now = prev;
 	}
 }
 
 void	delete_back_rb(t_div_info *div_info)
 {
-	t_deque		*commands;
+	t_node		*now;
+	t_node		*prev;
 	t_command	command;
 
-	commands = div_info -> commands;
-	while (commands -> size)
+	now = div_info -> commands -> back;
+	while (now != NULL)
 	{
-		command = commands -> back -> content.command;
+		command = now -> content.command;
+		prev = now -> prev;
 		if (command == rb)
 		{
-			free(popback(commands));
+			disjoint_node(div_info -> commands, now);
 			pushfront(div_info -> s_q, popback(div_info -> s_q));
 		}
-		else
+		else if (command == pa)
 			break ;
+		now = prev;
 	}
 }
