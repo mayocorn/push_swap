@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 15:00:01 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 04:00:55 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/pushswap.h"
+#include "pushswap.h"
 
 static void	divide_a_back(t_div_info *div_info);
 static void	move_small_all(t_div_info *div_info);

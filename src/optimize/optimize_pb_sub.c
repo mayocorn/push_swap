@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 20:15:48 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 16:43:31 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/optimize.h"
+#include "optimize.h"
 
 static void	optimize_parrbpb(t_deque *commands, t_node **node);
 static void	optimize_rrbpasbpb(t_deque *commands, t_node **node);

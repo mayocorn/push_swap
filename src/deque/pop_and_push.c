@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:28:28 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 05:30:54 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/deque.h"
+#include "deque.h"
 
 void	popfront_and_pushfront(t_div_info *div_info, \
 								t_deque *after, t_command command)

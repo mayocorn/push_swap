@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 13:26:02 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 02:59:18 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/optimize.h"
+#include "optimize.h"
 
 static void	optimize_sbpapa(t_node **node);
 static void	optimize_pbpa(t_deque *commands, t_node **node);

@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:29:23 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 16:52:52 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/optimize.h"
+#include "optimize.h"
 
 static void	optimize_parasarra(t_deque *commands, t_node **node);
 

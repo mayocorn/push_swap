@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 06:23:53 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 05:55:15 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/pushswap.h"
+#include "pushswap.h"
 
 void	sort_a_maxvalue(t_deque *elements, t_deque *commands)
 {

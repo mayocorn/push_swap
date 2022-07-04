@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:23:36 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 04:05:13 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/deque.h"
+#include "deque.h"
 
 void	disjoint_node(t_deque *deque, t_node *ptr)
 {

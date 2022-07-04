@@ -6,7 +6,7 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/04 17:09:19 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/05 01:38:27 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -123,10 +123,11 @@ B_DEPS  = $(B_OBJS:%.o=%.d)
 
 CC      = gcc
 CFLAGS  = -Wall -Wextra -Werror
+INCLUDE = ./include/
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
 	 mkdir -p $(dir $@)
-	 $(CC) $(CFLAGS) -MMD -MP -c $< -o $@
+	 $(CC) $(CFLAGS) -MMD -MP -I$(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)

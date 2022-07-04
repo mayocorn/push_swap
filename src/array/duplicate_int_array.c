@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 03:52:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 03:52:49 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:27:28 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/array.h"
+#include "array.h"
 
 int	*duplicate_int_array(size_t size, int *src)
 {

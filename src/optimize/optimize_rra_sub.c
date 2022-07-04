@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/30 01:00:10 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 16:54:03 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/optimize.h"
+#include "optimize.h"
 
 static void	optimize_ra_rra(t_deque *commands, t_node **node, \
 									t_node *ra_node, t_node *pab_node);

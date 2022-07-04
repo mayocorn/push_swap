@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:54:55 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/04 06:34:37 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:27:33 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/bonus.h"
+#include "bonus.h"
 
 int	main(int argc, char **argv)
 {

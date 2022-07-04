@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:12:32 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/04 17:54:13 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/bonus.h"
+#include "bonus.h"
 
 static t_command	read_command(char *str);
 

@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 09:20:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 05:05:55 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/coordinate_compression.h"
+#include "coordinate_compression.h"
 
 static size_t	get_index(size_t size, int *sorted, int x);
 

@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:09:40 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 16:02:38 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:27:22 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/main.h"
+#include "main.h"
 
 int	main(int argc, char **argv)
 {

@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 15:49:18 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:49:29 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/divide.h"
+#include "divide.h"
 
 t_div_info	*create_div_info(t_deque *elements, t_deque *commands)
 {

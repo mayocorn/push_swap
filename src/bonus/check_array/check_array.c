@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 06:34:58 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/04 06:36:34 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/bonus.h"
+#include "bonus.h"
 
 void	check_array(size_t size, int *array)
 {

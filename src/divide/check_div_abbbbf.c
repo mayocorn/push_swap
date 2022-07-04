@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:28:50 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 15:43:46 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/divide.h"
+#include "divide.h"
 
 static size_t	cnt_rr(t_div_info *div_info, int large, int small);
 static void		set_div_info(t_div_info *div_info, int large, int small);

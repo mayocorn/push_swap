@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 06:09:46 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/04 07:30:32 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:41 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/bonus.h"
+#include "bonus.h"
 
 void	check_sorted(t_deque *stack_a, t_deque *stack_b)
 {

@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:18:57 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/01 05:19:38 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/deque.h"
+#include "deque.h"
 
 t_node	*popback(t_deque *deque)
 {

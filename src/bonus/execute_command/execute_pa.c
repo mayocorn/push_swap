@@ -6,11 +6,11 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 05:26:45 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/04 05:48:40 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../include/bonus.h"
+#include "bonus.h"
 
 void	execute_pa(t_deque *stack_a, t_deque *stack_b)
 {
