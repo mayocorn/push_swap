@@ -30,19 +30,20 @@ norminetteの仕様でインデントがずれていたり変数のスコープ�
 
 ## ⭐ USAGE
 
-##### clone
+#### clone
 ```bash
 git clone https://github.com/mayocorn/push_swap.git mayocorn/push_swap
 ```
 
-##### build push_swap & checker
+#### build push_swap & checker
 ```bash
 cd mayocorn/push_swap
 make
 make bonus
 ```
 
-##### run
+#### run
+ソートしたい数列を引数にとります。
 ```bash
 ./push_swap 5 4 1 3 2
 ```
@@ -50,7 +51,7 @@ make bonus
 ./push_swap 5 4 1 3 2 | ./checker 5 4 1 3 2
 ```
 
-##### sample
+#### sample
 https://user-images.githubusercontent.com/89581623/177196954-b30c601c-b6e2-46b0-8cdb-4f4354840174.mp4
 
 
