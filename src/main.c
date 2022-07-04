@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:09:40 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 03:39:33 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/02 16:02:38 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	t_deque	*commands;
 
 	array_size = argc - 1;
-	if (array_size <= 1)
+	if (array_size == 0)
 		ft_exit(SUCCESS);
 	array_original = convert_array_str_to_int(array_size, argv + 1);
 	array_sorted = duplicate_int_array(array_size, array_original);
@@ -33,6 +33,7 @@ int	main(int argc, char **argv)
 	optimize(commands);
 	print_commands(commands);
 	delete_deque(commands);
+	return (0);
 }
 
 /*
