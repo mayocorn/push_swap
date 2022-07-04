@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 00:44:12 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/24 00:53:19 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:17:48 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,25 +31,25 @@ void	print_commands(t_deque *commands)
 static void	print_command(t_command command)
 {
 	if (command == sa)
-		write(1, "sa\n", 3);
+		write(STDOUT_FILENO, "sa\n", 3);
 	if (command == sb)
-		write(1, "sb\n", 3);
+		write(STDOUT_FILENO, "sb\n", 3);
 	if (command == ss)
-		write(1, "ss\n", 3);
+		write(STDOUT_FILENO, "ss\n", 3);
 	if (command == pa)
-		write(1, "pa\n", 3);
+		write(STDOUT_FILENO, "pa\n", 3);
 	if (command == pb)
-		write(1, "pb\n", 3);
+		write(STDOUT_FILENO, "pb\n", 3);
 	if (command == ra)
-		write(1, "ra\n", 3);
+		write(STDOUT_FILENO, "ra\n", 3);
 	if (command == rb)
-		write(1, "rb\n", 3);
+		write(STDOUT_FILENO, "rb\n", 3);
 	if (command == rr)
-		write(1, "rr\n", 3);
+		write(STDOUT_FILENO, "rr\n", 3);
 	if (command == rra)
-		write(1, "rra\n", 4);
+		write(STDOUT_FILENO, "rra\n", 4);
 	if (command == rrb)
-		write(1, "rrb\n", 4);
+		write(STDOUT_FILENO, "rrb\n", 4);
 	if (command == rrr)
-		write(1, "rrr\n", 4);
+		write(STDOUT_FILENO, "rrr\n", 4);
 }
