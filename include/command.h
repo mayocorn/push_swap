@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 12:31:11 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/06/22 08:15:34 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/04 07:11:50 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ typedef enum e_command
 	rr,
 	rra,
 	rrb,
-	rrr
+	rrr,
+	error
 }	t_command;
 
 #endif
