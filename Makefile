@@ -6,7 +6,7 @@
 #    By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 17:09:48 by mayocorn          #+#    #+#              #
-#    Updated: 2022/07/05 01:38:27 by mayocorn         ###   ########.fr        #
+#    Updated: 2022/07/08 01:12:36 by mayocorn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -126,8 +126,8 @@ CFLAGS  = -Wall -Wextra -Werror
 INCLUDE = ./include/
 
 $(OBJDIR)%.o: $(SRCDIR)%.c
-	 mkdir -p $(dir $@)
-	 $(CC) $(CFLAGS) -MMD -MP -I$(INCLUDE) -c $< -o $@
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -MMD -MP -I$(INCLUDE) -c $< -o $@
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
