@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:34:59 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	optimize_ra(t_deque *commands, t_node **node)
 	t_command	command;
 
 	prev = (*node)->prev;
-	if (prev != NULL && prev -> content.command == pb)
+	if (prev != NULL && prev->content.command == pb)
 		return (optimize_sapbra(commands, node));
 	while (prev != NULL)
 	{
-		command = prev -> content.command;
+		command = prev->content.command;
 		if (command == rra)
 		{
-			next = prev -> next;
+			next = prev->next;
 			if (next == *node)
-				next = next -> next;
+				next = next->next;
 			disjoint_node(commands, prev);
 			disjoint_node(commands, *node);
 			*node = next;
@@ -38,7 +38,7 @@ void	optimize_ra(t_deque *commands, t_node **node)
 		}
 		if (command == sa || command == pb || command == pa || command == ra)
 			break ;
-		prev = prev -> prev;
+		prev = prev->prev;
 	}
 	*node = (*node)->next;
 }
@@ -49,10 +49,10 @@ static void	optimize_sapbra(t_deque *commands, t_node **node)
 	t_node	*sa_node;
 
 	pb_node = (*node)->prev;
-	sa_node = pb_node -> prev;
-	if (sa_node != NULL && sa_node -> content.command == sa)
+	sa_node = pb_node->prev;
+	if (sa_node != NULL && sa_node->content.command == sa)
 	{
-		sa_node -> content.command = ra;
+		sa_node->content.command = ra;
 		disjoint_node(commands, *node);
 		*node = sa_node;
 	}

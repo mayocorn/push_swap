@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 16:32:56 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void	pushswap_by_commands(t_deque *commands, \
 {
 	t_command	command;
 
-	while (commands -> size)
+	while (commands->size)
 	{
-		command = commands -> front -> content.command;
+		command = commands->front->content.command;
 		free(popfront(commands));
 		execute_command(command, stack_a, stack_b);
 	}

@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:31:18 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ int	get_minelement(t_deque *deque)
 	t_node	*node;
 	int		min_element;
 
-	node = deque -> front;
+	node = deque->front;
 	min_element = INT_MAX;
 	while (node != NULL)
 	{
-		min_element = ft_min(min_element, node -> content.number);
-		node = node -> next;
+		min_element = ft_min(min_element, node->content.number);
+		node = node->next;
 	}
 	return (min_element);
 }

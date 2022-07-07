@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 00:44:12 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	print_commands(t_deque *commands)
 	t_node		*node;
 	t_command	command;
 
-	node = commands -> front;
+	node = commands->front;
 	while (node != NULL)
 	{
-		command = node -> content.command;
+		command = node->content.command;
 		print_command(command);
-		node = node -> next;
+		node = node->next;
 	}
 }
 

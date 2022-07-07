@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:54:55 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:27:33 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:50:40 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	size = argc - 1;
 	if (size == 0)
-		ft_exit(SUCCESS);
+		ft_exit(EXIT_SUCCESS);
 	array = convert_array_str_to_int(size, argv + 1);
 	check_array(size, array);
 	check_commands(size, array);

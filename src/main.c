@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:09:40 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:27:22 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:49:38 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 
 	array_size = argc - 1;
 	if (array_size == 0)
-		ft_exit(SUCCESS);
+		ft_exit(EXIT_SUCCESS);
 	array_original = convert_array_str_to_int(array_size, argv + 1);
 	array_sorted = duplicate_int_array(array_size, array_original);
 	ft_mergesort(array_size, array_sorted);

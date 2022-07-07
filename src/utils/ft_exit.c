@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:38:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 03:10:56 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:48:54 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 void	ft_exit(int status)
 {
-	if (status == SUCCESS)
-		exit(SUCCESS);
-	write(STDERR_FILENO, "Error\n", 6);
-	exit(ERROR);
+	if (status == EXIT_FAILURE)
+		write(STDERR_FILENO, "Error\n", 6);
+	exit(status);
 }

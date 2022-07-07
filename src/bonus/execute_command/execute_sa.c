@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 18:00:22 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	execute_sa(t_deque *stack_a)
 	t_node	*a_second;
 	int		tmp;
 
-	a_first = stack_a -> front;
+	a_first = stack_a->front;
 	if (a_first == NULL)
 		return ;
-	a_second = a_first -> next;
+	a_second = a_first->next;
 	if (a_second == NULL)
 		return ;
-	tmp = a_second -> content.number;
-	a_second -> content.number = a_first -> content.number;
-	a_first -> content.number = tmp;
+	tmp = a_second->content.number;
+	a_second->content.number = a_first->content.number;
+	a_first->content.number = tmp;
 }

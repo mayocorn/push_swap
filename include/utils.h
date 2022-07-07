@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 17:51:15 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/02 02:42:43 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:46:19 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define UTILS_H
 # include <stdlib.h>
 # include <unistd.h>
-# define SUCCESS 0
-# define ERROR 1
 
 void	*malloc_and_checknull(size_t size);
 void	free_and_setnull(void **ptr);

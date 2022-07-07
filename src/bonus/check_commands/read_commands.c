@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:12:32 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:48:09 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	read_commands(t_deque *commands)
 			break ;
 		command = read_command(str);
 		if (command == error)
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		pushback(commands, create_command_node(command));
 		free_and_setnull((void **)&str);
 	}

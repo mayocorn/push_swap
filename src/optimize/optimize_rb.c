@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:52:28 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,16 @@ void	optimize_rb(t_deque *commands, t_node **node)
 	t_command	command;
 
 	prev = (*node)->prev;
-	if (prev != NULL && prev -> content.command == pa)
+	if (prev != NULL && prev->content.command == pa)
 		return (optimize_sbparb(commands, node));
 	while (prev != NULL)
 	{
-		command = prev -> content.command;
+		command = prev->content.command;
 		if (command == rrb)
 		{
-			next = prev -> next;
+			next = prev->next;
 			if (next == *node)
-				next = next -> next;
+				next = next->next;
 			disjoint_node(commands, prev);
 			disjoint_node(commands, *node);
 			*node = next;
@@ -38,7 +38,7 @@ void	optimize_rb(t_deque *commands, t_node **node)
 		}
 		if (command == sb || command == pa || command == pb || command == rb)
 			break ;
-		prev = prev -> prev;
+		prev = prev->prev;
 	}
 	*node = (*node)->next;
 }
@@ -49,10 +49,10 @@ static void	optimize_sbparb(t_deque *commands, t_node **node)
 	t_node	*sb_node;
 
 	pa_node = (*node)->prev;
-	sb_node = pa_node -> prev;
-	if (sb_node != NULL && sb_node -> content.command == sb)
+	sb_node = pa_node->prev;
+	if (sb_node != NULL && sb_node->content.command == sb)
 	{
-		sb_node -> content.command = rb;
+		sb_node->content.command = rb;
 		disjoint_node(commands, *node);
 		*node = sb_node;
 	}

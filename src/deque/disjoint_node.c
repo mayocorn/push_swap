@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:23:36 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ void	disjoint_node(t_deque *deque, t_node *ptr)
 	t_node	*prev;
 	t_node	*next;
 
-	prev = ptr -> prev;
-	next = ptr -> next;
+	prev = ptr->prev;
+	next = ptr->next;
 	if (prev != NULL)
-		prev -> next = next;
+		prev->next = next;
 	else
-		deque -> front = next;
+		deque->front = next;
 	if (next != NULL)
-		next -> prev = prev;
+		next->prev = prev;
 	else
-		deque -> back = prev;
-	deque -> size--;
+		deque->back = prev;
+	deque->size--;
 	free(ptr);
 }

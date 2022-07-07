@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 15:29:23 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	optimize_rra(t_deque *commands, t_node **node)
 	prev = (*node)->prev;
 	if (prev == NULL)
 		*node = (*node)->next;
-	else if (prev -> content.command == sa)
+	else if (prev->content.command == sa)
 		return (optimize_parasarra(commands, node));
 	else
 		return (optimize_rra_sub(commands, node));
@@ -34,11 +34,11 @@ static void	optimize_parasarra(t_deque *commands, t_node **node)
 	t_node	*pa_node;
 
 	sa_node = (*node)->prev;
-	ra_node = sa_node -> prev;
-	if (ra_node != NULL && ra_node -> content.command == ra)
+	ra_node = sa_node->prev;
+	if (ra_node != NULL && ra_node->content.command == ra)
 	{
-		pa_node = ra_node -> prev;
-		if (pa_node != NULL && pa_node -> content.command == pa)
+		pa_node = ra_node->prev;
+		if (pa_node != NULL && pa_node->content.command == pa)
 		{
 			disjoint_node(commands, pa_node);
 			disjoint_node(commands, ra_node);

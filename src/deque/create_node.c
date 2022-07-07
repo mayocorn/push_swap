@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:21:07 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ t_node	*create_node(void)
 	t_node	*res;
 
 	res = malloc_and_checknull(sizeof(t_node));
-	res -> next = NULL;
-	res -> prev = NULL;
+	res->next = NULL;
+	res->prev = NULL;
 	return (res);
 }
 
@@ -29,7 +29,7 @@ t_node	*create_command_node(t_command command)
 
 	res = create_node();
 	content.command = command;
-	res -> content = content;
+	res->content = content;
 	return (res);
 }
 
@@ -40,6 +40,6 @@ t_node	*create_number_node(int number)
 
 	res = create_node();
 	content.number = number;
-	res -> content = content;
+	res->content = content;
 	return (res);
 }

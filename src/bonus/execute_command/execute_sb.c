@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 18:05:41 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:14 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	execute_sb(t_deque *stack_b)
 	t_node	*b_second;
 	int		tmp;
 
-	b_first = stack_b -> front;
+	b_first = stack_b->front;
 	if (b_first == NULL)
 		return ;
-	b_second = b_first -> next;
+	b_second = b_first->next;
 	if (b_second == NULL)
 		return ;
-	tmp = b_second -> content.number;
-	b_second -> content.number = b_first -> content.number;
-	b_first -> content.number = tmp;
+	tmp = b_second->content.number;
+	b_second->content.number = b_first->content.number;
+	b_first->content.number = tmp;
 }

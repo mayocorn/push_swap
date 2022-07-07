@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/27 14:17:49 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	optimize_pb(t_deque *commands, t_node **node)
 	prev = (*node)->prev;
 	if (prev == NULL)
 		*node = (*node)->next;
-	else if (prev -> content.command == pa)
+	else if (prev->content.command == pa)
 		return (optimize_papb(commands, node));
-	else if (prev -> content.command == pb)
+	else if (prev->content.command == pb)
 		return (optimize_sapbpb(node));
-	else if (prev -> content.command == ra)
+	else if (prev->content.command == ra)
 		return (optimize_sarapb(commands, node));
-	else if (prev -> content.command == rb)
+	else if (prev->content.command == rb)
 		return (optimize_parbpb(commands, node));
 	else
 		return (optimize_pb_sub(commands, node));
@@ -52,10 +52,10 @@ static void	optimize_sapbpb(t_node **node)
 	t_node	*sa_node;
 
 	pb_node = (*node)->prev;
-	sa_node = pb_node -> prev;
-	if (sa_node != NULL && sa_node -> content.command == sa)
+	sa_node = pb_node->prev;
+	if (sa_node != NULL && sa_node->content.command == sa)
 	{
-		sa_node -> content.command = pb;
+		sa_node->content.command = pb;
 		(*node)->content.command = sb;
 		*node = sa_node;
 	}
@@ -69,10 +69,10 @@ static void	optimize_sarapb(t_deque *commands, t_node **node)
 	t_node	*sa_node;
 
 	ra_node = (*node)->prev;
-	sa_node = ra_node -> prev;
-	if (sa_node != NULL && sa_node -> content.command == sa)
+	sa_node = ra_node->prev;
+	if (sa_node != NULL && sa_node->content.command == sa)
 	{
-		sa_node -> content.command = pb;
+		sa_node->content.command = pb;
 		disjoint_node(commands, *node);
 		*node = sa_node;
 	}
@@ -86,10 +86,10 @@ static void	optimize_parbpb(t_deque *commands, t_node **node)
 	t_node	*pa_node;
 
 	rb_node = (*node)->prev;
-	pa_node = rb_node -> prev;
-	if (pa_node != NULL && pa_node -> content.command == pa)
+	pa_node = rb_node->prev;
+	if (pa_node != NULL && pa_node->content.command == pa)
 	{
-		pa_node -> content.command = sb;
+		pa_node->content.command = sb;
 		disjoint_node(commands, *node);
 		*node = rb_node;
 	}

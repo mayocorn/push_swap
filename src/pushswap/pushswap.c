@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 20:45:42 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:50:13 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,5 @@ static void	sort_size3(int *array)
 		write(STDOUT_FILENO, "ra\n", 3);
 	if (a == 2 && b == 1 && c == 0)
 		write(STDOUT_FILENO, "ra\nsa\n", 6);
-	ft_exit(SUCCESS);
+	ft_exit(EXIT_SUCCESS);
 }

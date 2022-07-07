@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:26 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:47:32 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static int	getsign_or_exit(char c)
 	else if (c == '-')
 		res = NEGATIVE;
 	else
-		ft_exit(ERROR);
+		ft_exit(EXIT_FAILURE);
 	return (res);
 }
 
@@ -69,12 +69,12 @@ static int	stoi_pos(char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		if (INT_MAX / 10 < res)
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		res *= 10;
 		if (INT_MAX - res < *str - '0')
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		res += *str - '0';
 		str++;
 	}
@@ -89,12 +89,12 @@ static int	stoi_neg(char *str)
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		if (INT_MIN / 10 > res)
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		res *= 10;
 		if (INT_MIN - res > -(*str - '0'))
-			ft_exit(ERROR);
+			ft_exit(EXIT_FAILURE);
 		res -= *str - '0';
 		str++;
 	}

@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 06:09:46 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:41 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ void	check_sorted(t_deque *stack_a, t_deque *stack_b)
 	t_node	*next;
 
 	ok = true;
-	now = stack_a -> front;
+	now = stack_a->front;
 	while (now != NULL)
 	{
-		next = now -> next;
-		if (next != NULL && now -> content.number > next -> content.number)
+		next = now->next;
+		if (next != NULL && now->content.number > next->content.number)
 			ok = false;
 		now = next;
 	}
-	if (stack_b -> size)
+	if (stack_b->size)
 		ok = false;
 	if (ok)
 		write(STDOUT_FILENO, "OK\n", 3);

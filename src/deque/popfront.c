@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 05:16:46 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ t_node	*popfront(t_deque *deque)
 	t_node	*res;
 	t_node	*next;
 
-	res = deque -> front;
-	next = res -> next;
-	deque -> front = next;
+	res = deque->front;
+	next = res->next;
+	deque->front = next;
 	if (next != NULL)
-		next -> prev = NULL;
+		next->prev = NULL;
 	else
-		deque -> back = NULL;
-	res -> next = NULL;
-	deque -> size--;
+		deque->back = NULL;
+	res->next = NULL;
+	deque->size--;
 	return (res);
 }

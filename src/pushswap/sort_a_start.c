@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:09:52 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	sort_a_start(t_deque *elements, t_deque *commands)
 	size_t		size;
 
 	div_info = create_div_info(elements, commands);
-	size = elements -> size;
-	div_info -> large = size - (size + 2) / 3;
-	div_info -> small = size / 3 - 1;
+	size = elements->size;
+	div_info->large = size - (size + 2) / 3;
+	div_info->small = size / 3 - 1;
 	set_div_info(div_info);
 	sort_until_appear_med(div_info);
 	divide(div_info);
@@ -37,15 +37,15 @@ static void	sort_until_appear_med(t_div_info *div_info)
 	t_deque	*elements;
 	t_node	*node;
 
-	elements = div_info -> elements;
-	while (elements -> size)
+	elements = div_info->elements;
+	while (elements->size)
 	{
-		node = elements -> front;
-		number = node -> content.number;
-		if (number <= (div_info -> small))
-			popfront_and_pushfront(div_info, div_info -> hold_after, pb);
-		else if (number >= (div_info -> large))
-			popfront_and_pushback(div_info, div_info -> l_q, ra);
+		node = elements->front;
+		number = node->content.number;
+		if (number <= (div_info->small))
+			popfront_and_pushfront(div_info, div_info->hold_after, pb);
+		else if (number >= (div_info->large))
+			popfront_and_pushback(div_info, div_info->l_q, ra);
 		else
 			break ;
 	}
@@ -53,15 +53,15 @@ static void	sort_until_appear_med(t_div_info *div_info)
 
 static void	set_div_info(t_div_info *div_info)
 {
-	div_info -> hold = div_info -> s_q;
-	div_info -> l_command = ra;
-	div_info -> m_command = pb;
-	div_info -> s_command = pb;
-	div_info -> hold_command = rb;
-	div_info -> l_push = move_hold_one;
-	div_info -> m_push = move_hold_all;
-	div_info -> s_push = popfront_and_pushfront;
-	div_info -> l_next = sort_a_maxvalue;
-	div_info -> m_next = sort_b_front;
-	div_info -> s_next = sort_b_minvalue;
+	div_info->hold = div_info->s_q;
+	div_info->l_command = ra;
+	div_info->m_command = pb;
+	div_info->s_command = pb;
+	div_info->hold_command = rb;
+	div_info->l_push = move_hold_one;
+	div_info->m_push = move_hold_all;
+	div_info->s_push = popfront_and_pushfront;
+	div_info->l_next = sort_a_maxvalue;
+	div_info->m_next = sort_b_front;
+	div_info->s_next = sort_b_minvalue;
 }

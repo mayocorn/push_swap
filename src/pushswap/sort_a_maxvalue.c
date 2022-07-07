@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 06:23:53 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/05 01:29:02 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 00:38:20 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sort_a_maxvalue(t_deque *elements, t_deque *commands)
 	size_t		max_cnt;
 	int			min_element;
 
-	if (elements -> size <= 1)
+	if (elements->size <= 1)
 		return (delete_deque(elements));
 	div_info = create_div_info(elements, commands);
 	max_cnt = 0;
