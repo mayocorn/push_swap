@@ -6,7 +6,7 @@
 /*   By: mayocorn <twitter@mayocornsuki>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:57:08 by mayocorn          #+#    #+#             */
-/*   Updated: 2022/07/08 00:47:32 by mayocorn         ###   ########.fr       */
+/*   Updated: 2022/07/08 01:35:15 by mayocorn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ static int	stoi_neg(char *str)
 	int	res;
 
 	res = 0;
+	if (*str == '\0')
+		ft_exit(EXIT_FAILURE);
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
